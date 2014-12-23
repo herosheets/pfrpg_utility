@@ -1,4 +1,4 @@
-class PfrpgCore::Effect
+class PfrpgUtility::Effect
   attr_accessor :type, :key, :value, :affect
   def initialize(type, key, value, affect=nil)
     # standard effect proc; add a value
@@ -14,7 +14,7 @@ class PfrpgCore::Effect
 
   def self.load(effects_string)
     return effects_string if effects_string.instance_of? Array
-    return [ effects_string ] if effects_string.instance_of? PfrpgCore::Effect
+    return [ effects_string ] if effects_string.instance_of? PfrpgUtility::Effect
     return [] if effects_string.nil? || effects_string.empty?
     unless effects_string.instance_of? String
       ap "Error effect: "
@@ -29,7 +29,7 @@ class PfrpgCore::Effect
     type    = p[0]
     key     = p[1]
     value   = p[2]
-    PfrpgCore::Effect.new(type, key, value)
+    PfrpgUtility::Effect.new(type, key, value)
   end
 
   def apply(character)

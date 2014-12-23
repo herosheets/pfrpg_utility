@@ -1,4 +1,4 @@
-module PfrpgCore
+module PfrpgUtility
   class Prerequisite
 
     def initialize(attribute, value, matcher=nil)

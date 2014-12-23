@@ -1,9 +1,9 @@
-module PfrpgCore
+module PfrpgUtility
   class Alignment
 
     attr_reader :alignment
     def initialize(alignment)
-      @alignment = PfrpgCore::Alignment.parse(alignment)
+      @alignment = PfrpgUtility::Alignment.parse(alignment)
     end
 
     def self.filter_by_character(character)

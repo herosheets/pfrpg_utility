@@ -34,7 +34,7 @@
 #             # => Dice.new(4, 6, 2)
 #   4.d6 * 10 # => Dice.new(4, 6) * 10
 #             # => Dice.new(4, 6, 0, 10)
-class PfrpgCore::Dice
+class PfrpgUtility::Dice
   attr_reader :sides, :count, :increment, :multiplier
 
   def initialize(count, sides, increment=0, multiplier=1)
@@ -45,13 +45,13 @@ class PfrpgCore::Dice
   # Return a new Dice object, with the given multiplier. If the dice already
   # have a multipler, it accumulates.
   def *(n)
-    PfrpgCore::Dice.new(count, sides, increment, multiplier * n)
+    PfrpgUtility::Dice.new(count, sides, increment, multiplier * n)
   end
 
   # Return a new Dice object, with the given increment. If the dice already
   # have an increment, it accumulates.
   def +(n)
-    PfrpgCore::Dice.new(count, sides, increment+n, multiplier)
+    PfrpgUtility::Dice.new(count, sides, increment+n, multiplier)
   end
 
   # Same as adding a negative increment.
@@ -129,6 +129,6 @@ class Integer
   # I'm aware of). Also, the optimist in me likes to think this is more
   # efficient than method_missing, though I haven't done any benchmarks. :)
   [4,6,8,10,12,20].each do |sides|
-    define_method("d#{sides}") { PfrpgCore::Dice.new(self, sides) }
+    define_method("d#{sides}") { PfrpgUtility::Dice.new(self, sides) }
   end
 end
