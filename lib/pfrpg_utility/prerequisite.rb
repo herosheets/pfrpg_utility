@@ -56,3 +56,13 @@ module PfrpgUtility
 
   end
 end
+
+require 'pfrpg_utility/prerequisite/alignment_prereq'
+require 'pfrpg_utility/prerequisite/attribute_prereq'
+require 'pfrpg_utility/prerequisite/bab_prereq'
+require 'pfrpg_utility/prerequisite/class_prereq'
+require 'pfrpg_utility/prerequisite/feat_prereq'
+require 'pfrpg_utility/prerequisite/heroclass_feature_prereq'
+require 'pfrpg_utility/prerequisite/language_prereq'
+require 'pfrpg_utility/prerequisite/misc_prereq'
+require 'pfrpg_utility/prerequisite/skill_prereq'
